@@ -2,11 +2,12 @@ import cv2
 import numpy as np
 import serial
 
-arduino = serial.Serial('COM17', 9600, timeout=.1)
+#arduino = serial.Serial('COM17', 9600, timeout=.1)
 video = cv2.VideoCapture("igvc_unsw.mp4")
 
 while True:
-    data = arduino.readline()[:-2] #the last bit gets rid of the new-line chars
+    data=1
+    #data = arduino.readline()[:-2] #the last bit gets rid of the new-line chars
     if data:
         print(data)
     ret, orig_frame = video.read()
